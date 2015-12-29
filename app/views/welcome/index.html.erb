@@ -1,0 +1,19 @@
+<h1>Params Hash</h1>
+
+<p>The params hash is a collection of data that comes through your application in a request. So this data can come through various places. You can submit a form, and that sends over some data. Your URL might contain a chunk of data. The end of your URL might contain some GET request parameters.</p>
+
+<p>rails just knows to collect these things and put them in your application for you to work with.</p>
+
+<h3>GET Request Parameters</h3>
+<h4>Welcome Controller</h4>
+<p>def index
+  	<br>@test = params[:test]
+<br>end</p>
+<p>type in <strong>?test=hello </strong>after the URL and press enter</p>
+<p>Parameters: {"test"=>"<strong><%= @test %></strong>"}</p>
+<p>What's happening?</p>
+<p>The URL contains some GET request parameters that rails intelligently picks up. The Welcome Controller has an instance variable @test which is used to print out in the Index View what you typed in the URL.</p>
+
+<h3><%= link_to 'ID Parameters', welcome_path('replaceme') %></h3>
+
+<h3>POST Request Parameters</h3>
